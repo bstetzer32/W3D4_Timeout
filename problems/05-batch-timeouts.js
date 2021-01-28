@@ -12,6 +12,30 @@ In addition to Mocha, we recommend that you test your code manually using
 node with the examples below.
 
 Example:
+//need a for loop 
+//iterate through tasks and delays
+
+***********************************************************************/
+
+
+function batchTimeouts(cbArray, delayArray){
+
+    let arr = [];
+
+    cbArray.forEach((task, index)=> {
+
+        arr.push(setTimeout(task, delayArray[index]))
+
+    })
+
+
+    return arr; 
+
+};
+
+
+
+
 
 const sayHello = () => console.log('hi');
 const sayGoodbye = () => console.log('bye');
@@ -26,10 +50,6 @@ const timeoutObjs = batchTimeouts(tasks, delays);
 //  'WHAT?' after 900 ms
 
 console.log(timeoutObjs); // [ Timeout {...},  Timeout {...}, Timeout {...} ]
-***********************************************************************/
-
-
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = batchTimeouts;
