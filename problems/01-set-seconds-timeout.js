@@ -13,6 +13,30 @@ node with the examples below. Use the command
 `node problems/01-set-seconds-timeout.js`
 
 Examples:
+// accept a delay
+// use setTimeout func
+//accepts cb and time * 1000
+***********************************************************************/
+
+
+const setSecondsTimeout = (cb, time) => {
+
+
+            setTimeout(cb, time * 1000);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 setSecondsTimeout(function () {
     console.log('hello');
@@ -21,9 +45,6 @@ setSecondsTimeout(function () {
 setSecondsTimeout(function () {
     console.log('world');
 }, 1.4); // should print 'world' after 1400 milliseconds
-***********************************************************************/
-
-
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

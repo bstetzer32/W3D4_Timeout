@@ -10,6 +10,26 @@ node with the examples below.
 
 Examples:
 
+***********************************************************************/
+
+function boundInterval(cb, delay, obj){
+
+      const boundFunc = cb.bind(obj);
+
+   return setInterval(boundFunc, delay);
+
+}
+
+
+
+
+
+
+
+
+
+
+
 function bark() {
   console.log(this.name + ' barks');
 }
@@ -20,8 +40,8 @@ const cat = { name: 'Sennacy', colour: 'black'};
 boundInterval(bark, 500, dog); // prints 'Fido barks' every 500 ms
 
 const timeoutObj = boundInterval(bark, 250, cat); // prints 'Sennacy barks' every 250 ms
+clearInterval(timeoutObj)
 console.log(timeoutObj); // Timeout { ... }
-***********************************************************************/
 
 
 

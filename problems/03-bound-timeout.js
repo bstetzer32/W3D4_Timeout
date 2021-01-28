@@ -9,6 +9,36 @@ node with the examples below.
 
 Examples:
 
+
+have an outer func called boundTimeout
+accept a cb, delay, obj
+use setTimeout func as inner func
+          - call cb on obj
+          - use delay from boundTimeout
+
+
+
+***********************************************************************/
+
+
+const boundTimeout = (cb, delay, obj) => {
+
+      const boundFunc = cb.bind(obj)
+        setTimeout(boundFunc, delay)
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
 function bark() {
   console.log(this.name + ' barks');
 }
@@ -24,10 +54,6 @@ boundTimeout(bark, 500, dog); // prints 'Fido barks' after 500 ms
 boundTimeout(bark, 500, cat); // prints 'Sennacy barks' after 500 ms
 boundTimeout(meow, 500, dog); // prints 'Fido meowsss' after 500 ms
 boundTimeout(meow, 500, cat); // prints 'Sennacy meowsss' after 500 ms
-***********************************************************************/
-
-
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = boundTimeout;
