@@ -22,8 +22,54 @@ const timeoutObject = intervalCount(function() {
 }, 500); // prints 'hi' at 500ms intervals indefinitely
 
 console.log(timeoutObject); // Timeout { ... }
+
+// 
+
 ***********************************************************************/
 
+function dynamicIntervalCount(cb, delay, amt) {
+  if (amt === undefined) {
+    return setInterval(cb, delay);
+  } else if (amt) {
+    let obj = setInterval(() => {
+      cb();
+      amt--;
+      if (amt === 0) {
+        clearInterval(obj);
+      }
+    }, delay);
+  }
+}
+
+
+
+
+// const dynamicIntervalCount = (cb, delay, amt) => {
+//   if (amt === undefined) {
+//     const obj = setInterval(cb, delay);
+//     return obj;
+//   } else {
+//     const obj = setInterval(() => {
+//       cb();
+//       amt--;
+//       if (amt === 0) {
+//         clearInterval(obj);
+//       }
+//     }, delay);
+//   }
+// }
+
+
+// dynamicIntervalCount(function () {
+//   console.log('hi');
+// }, 500, 3); // prints 'hi' at 500ms intervals a total of 3 times
+
+
+// const timeoutObject = dynamicIntervalCount(function () {
+//   console.log('hi');
+// }, 500); // prints 'hi' at 500ms intervals indefinitely
+
+// console.log(timeoutObject); // Timeout { ... }
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

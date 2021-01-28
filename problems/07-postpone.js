@@ -20,8 +20,21 @@ const sayGoodbye = () => console.log('bye');
 const slowerGoodbye = postpone(sayGoodbye, 1750);
 console.log(slowerGoodbye); // [Function]
 slowerGoodbye(); // prints 'bye' after 1750 ms
+
+// Accept a callback and a delay 
+// Return a new function
+// Return function should invoke the callback after the delay
+//
+//
+
 ***********************************************************************/
 
+const postpone = function(cb, delay) {
+
+  return function() {
+    setTimeout(cb, delay)
+  }
+}
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -17,19 +17,15 @@ Example
 
 function intervalCount(cb, delay, amount){
 
-  const interval = setInterval((cb1) => {
+  const interval = setInterval(function() {
+    cb();
     amount-- 
     if (amount === 0){
       clearInterval(interval)
+    }
   }, delay)
+}
 
-    
-
-  }
-
-
-
-};
 
 
 
